@@ -1,25 +1,32 @@
 package practica;
-
+ /*
+  * 
+  */
 public class main {
-
+	
 
     public static void main(String[] args) {
 
-        CCuenta miCuenta;
+        CCuenta cuentaUno;
 
         double saldoActual;
 
 
-        miCuenta = new CCuenta("Antonio López","1000-2365-85-1230456789",2500,0);
+        cuentaUno = new CCuenta("Antonio López","1000-2365-85-1230456789",2500,0);
 
-        saldoActual = miCuenta.estado();
+        saldoActual = cuentaUno.estado();
 
         System.out.println("El saldo actual es"+ saldoActual );
 
 
-        try {
+        operacuenta(cuentaUno, 10);
 
-            miCuenta.retirar(2300);
+    }
+
+	private static void operacuenta(CCuenta cuentaUno, float cantidad) {
+		try {
+
+            cuentaUno.retirar(2300);
 
         } catch (Exception e) {
 
@@ -31,15 +38,14 @@ public class main {
 
             System.out.println("Ingreso en cuenta");
 
-            miCuenta.ingresar(695);
+            cuentaUno.ingresar(695);
 
         } catch (Exception e) {
 
             System.out.print("Fallo al ingresar");
 
         }
-
-    }
+	}
 
 }
 
